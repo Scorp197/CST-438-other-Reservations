@@ -1,32 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<body style="background-color: #dbe0e8;">
 <meta charset="UTF-8">
 <title>Package Deals</title>
 </head>
-<body style="background-color: #dbe0e8;">
 	<div>
 		<h1>Package Deals</h1>
 		<p>Select one of the following offers:</p>
+		<form action="#" th:action="@{/florida/locations}" th:object="${packagedeal}" method="post">
 			<div>
 				<strong>Package Deals:</strong>
-				
-			<form action="#" th:action="@{/package/new}" th:object="${packagedeal}" method="post">
-			<div>
-					<input type="radio" name="price" value="price"> Orlando Florida $7000
-					<!-- <label for="orlando"> Orlando Florida $7000</label> -->
+				<div class="form-check form-check-inline">
+					<input type="radio" id="orlando" name="price" value="orlando">
+					<label for="orlando"> Magic Kingdom- Bay Lake Florida + 3 day vacation $7000</label>
 				</div>
-				<!-- <div class="form-check form-check-inline">
+				<div class="form-check form-check-inline">
 					<input type="radio" id="lasvegas" name="price" value="lasvegas">
-					<label for="lasvegas"> Las Vegas Nevada $6000</label>
+					<label for="lasvegas"> Universal Orlando Resort + 5 days $6000</label>
 				</div>
 				<div class="form-check form-check-inline">
 					<input type="radio" id="newyork" name="price" value="newyork">
-					<label for="newyork"> New York $5000</label>
+					<label for="newyork"> Disney's Hollywood Studios- Bay Lake + 6 days $5000</label>
 				</div>
 				<div class="form-check form-check-inline">
 					<input type="radio" id="losangeles" name="price" value="losangeles">
-					<label for="losangeles"> Los Angeles $4000</label> -->
+					<label for="losangeles"> SeaWorld Orlando + 7 days $4000</label>
 				</div>				
 			</div>
 			<br> <input type="submit" value="Submit" />

@@ -11,12 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import cst438.domain.CityInfo;
 import cst438.domain.Package;
 import cst438.domain.PackageRepository;
+import cst438.services.CityService;
 
 @Controller
 public class PackageController
 {
+	@Autowired 
+	CityService cityService;
 
    @Autowired
    PackageRepository packageRepository;
@@ -47,6 +51,47 @@ public class PackageController
       model.addAttribute("packagedeal", packageDeal);
       return "available_packages";
    }
+   
+   @GetMapping("/packages") // A new reservation from a form
+   public String PackageHome(Model model)
+   {
+//      Package packageDeal = new Package();
+//      model.addAttribute("packagedeal", packageDeal);
+      return "package_site";
+   }
+   
+   @GetMapping("/locations") // A new reservation from a form
+   public String PackageLocations(Model model)
+   {
+//      Package packageDeal = new Package();
+//      model.addAttribute("packagedeal", packageDeal);
+      return "location_show";
+   }
+   
+   @GetMapping("/florida/locations") // A new reservation from a form
+   public String FloridaPackageLocations(Model model)
+   {
+//      Package packageDeal = new Package();
+//      model.addAttribute("packagedeal", packageDeal);
+      return "florida_packages";
+   }
+   
+   @GetMapping("/lasvegas/locations") // A new reservation from a form
+   public String LasVegasPackageLocations(Model model)
+   {
+//      Package packageDeal = new Package();
+//      model.addAttribute("packagedeal", packageDeal);
+      return "lasvegas_packages";
+   }
+   
+   @GetMapping("/losangeles/locations") // A new reservation from a form
+   public String LasAngelesPackageLocations(Model model)
+   {
+//      Package packageDeal = new Package();
+//      model.addAttribute("packagedeal", packageDeal);
+      return "losangeles_packages";
+   }
+
 
    @PostMapping("/package/reserves") 
 	public String createReservation(
@@ -59,7 +104,7 @@ public class PackageController
 			model.addAttribute("cityName", cityName);
 			model.addAttribute("price", price);
 			model.addAttribute("email", email);
-//			Package.availablePackages(cityName, price, email);
+			cityService.requestReservation(cityName, price, email);
 			return "available_packages";
 			
 	} 
