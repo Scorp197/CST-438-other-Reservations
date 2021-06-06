@@ -1,0 +1,20 @@
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Person List</title>
+</head>
+<body>
+	<a href="/movies/new">Add a person</a>
+	<br/>
+	<table>
+		<tr>
+			<th>Username</th>
+			<th>Password</th>
+		</tr>
+		<tr th:each="movie : ${movies}">
+			<td th:text="${movie.username}"></td>
+			<td th:text="${movie.password}"></td>
+
+		</tr>
+	</table>
+</body>
+</html>
