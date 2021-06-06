@@ -3,6 +3,7 @@ package cst438.controllers;
 
 import java.util.List;
 
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import cst438.domain.CityInfo;
 import cst438.domain.Package;
 import cst438.domain.PackageRepository;
-import cst438.domain.UserRepository;
-import cst438.domain.Verification;
 import cst438.services.CityService;
 
 @Controller
@@ -98,14 +97,6 @@ public class PackageController
       return "losangeles_packages";
    }
 
-   @GetMapping("/date") // A new reservation from a form
-   public String DepartureDate(Model model)
-   {
-//      Package packageDeal = new Package();
-//      model.addAttribute("packagedeal", packageDeal);
-      return "travel_dates";
-   }
-  
 
    @PostMapping("/package/reserves") 
 	public String createReservation(
