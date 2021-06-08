@@ -1,30 +1,20 @@
 
 package cst438.controllers;
 
-import java.util.List;
-
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import cst438.domain.CityInfo;
 import cst438.domain.Package;
 import cst438.domain.PackageRepository;
-import cst438.services.CityService;
+
 
 @Controller
 public class PackageController
 {
-	@Autowired 
-	CityService cityService;
 
    @Autowired
    PackageRepository packageRepository;
@@ -96,22 +86,6 @@ public class PackageController
 //      model.addAttribute("packagedeal", packageDeal);
       return "losangeles_packages";
    }
-
-
-   @PostMapping("/package/reserves") 
-	public String createReservation(
-
-			@RequestParam("cityName") String cityName, 
-			@RequestParam("email") String email,
-			@RequestParam("price") String price,
-			Model model) {
-		
-			model.addAttribute("cityName", cityName);
-			model.addAttribute("price", price);
-			model.addAttribute("email", email);
-			cityService.requestReservation(cityName, price, email);
-			return "available_packages";
-			
-	} 
 }
+
 
