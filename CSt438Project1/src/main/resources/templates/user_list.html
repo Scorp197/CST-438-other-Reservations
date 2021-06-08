@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
     <title>Person List</title>
@@ -9,11 +10,12 @@
 		<tr>
 			<th>Username</th>
 			<th>Password</th>
+			<th>Date</th>
 		</tr>
 		<tr th:each="movie : ${movies}">
-			<td th:text="${movie.username}"></td>
-			<td th:text="${movie.password}"></td>
-
+			<td th:text="${movie.Username}"></td>
+			<td th:text="${movie.Password}"></td>
+			<td th:text="${movie.date}"></td>
 		</tr>
 	</table>
 </body>
