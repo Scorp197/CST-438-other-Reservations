@@ -10,6 +10,10 @@
 		<span th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"> </span> <br />
 	Password: <input type="text" th:field="*{Password}" /> 
 	    <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"> </span> <br /> 
+	    City of Origin: <input type="text" th:field="*{originCity}" /> 
+	    <span th:if="${#fields.hasErrors('originCity')}" th:errors="*{originCity}"> </span> <br />
+	    
+	   
 	    
 	<input type="submit" value="Submit" />
 	</form>
