@@ -24,6 +24,10 @@ public class User {
 	@Size(min=3, max=25)
 	private String Password;
 	
+	@NotNull
+	@Size(min=3, max=25)
+	private String originCity;
+	
 	
 	private String date;
 	
@@ -37,8 +41,17 @@ public class User {
 		this.id = id;
 		this.Username = Username;
 		this.Password = Password;
+		this.originCity = originCity;
 	}
 	
+	public String getOriginCity() {
+		return originCity;
+	}
+
+	public void setOriginCity(String originCity) {
+		this.originCity = originCity;
+	}
+
 	public long getId() { return id; }
 	public void setId(long id) { this.id = id;}
 
