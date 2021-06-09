@@ -14,6 +14,12 @@ public class CarFind
    {
    } // Empty Constructor
 
+
+   public CarFind(int carId)
+   {
+      this.carId = carId;
+   } // Find by Car ID
+
    public CarFind(int carId, String carName, String reserveDate,
       String returnDate, String carCity, double price)
    {
@@ -25,6 +31,11 @@ public class CarFind
       this.carCity = carCity;
       this.price = price;
    }
+
+   public CarFind(String reserveDate)
+   {
+      this.reserveDate = reserveDate;
+   } // Find by Car reservation date
 
    @Override
    public boolean equals(Object obj)
