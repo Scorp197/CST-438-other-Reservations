@@ -16,6 +16,11 @@ public class FlightFind
    {
    } // Empty Constructor
 
+   public FlightFind(int flightId)
+   {
+      this.flightId = flightId;
+   } // Find by Flight ID
+
    public FlightFind(int flightId, String airlineName, String departureDate,
       String departureTime, int numberOfStops, String originCity,
       String destinationCity, double price)
@@ -29,6 +34,11 @@ public class FlightFind
       this.destinationCity = destinationCity;
       this.price = price;
    }
+
+   public FlightFind(String departureDate)
+   {
+      this.departureDate = departureDate;
+   } // Find by departure date
 
    @Override
    public boolean equals(Object obj)
