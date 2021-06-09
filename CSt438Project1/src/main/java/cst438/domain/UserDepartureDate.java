@@ -1,5 +1,7 @@
 package cst438.domain;
 
+import java.util.Date;
+
 public class UserDepartureDate {
 	
 	private String format;
@@ -14,7 +16,7 @@ public class UserDepartureDate {
 	public UserDepartureDate(String format, boolean autoclose, boolean todayHighlight, 
 			boolean selectOtherMonths, boolean showOtherMonths, boolean changeMonth, boolean changeYear, String orientation)
 		   {
-		 	this.format = "yyyy/mm/dd";
+		 	this.format = "yyyy-mm-dd";
 		 	this.autoclose = true;
 		 	this.todayHighlight = true;
 	        this.showOtherMonths = true;
@@ -23,6 +25,11 @@ public class UserDepartureDate {
 	        this.changeMonth = true;
 	        this.changeYear = true;
 	        this.orientation = "button";
-		   }
+		  }
 
+
+public UserDepartureDate(String format) {
+	new UserDepartureDate(format);
+	
+	}
 }
