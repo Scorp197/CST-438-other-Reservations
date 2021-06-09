@@ -13,6 +13,11 @@ public class HotelFind
    {
    } // Empty Constructor
 
+   public HotelFind(int hotelId)
+   {
+      this.hotelId = hotelId;
+   } // Find by hotel ID
+
    public HotelFind(int hotelId, String hotelName, String arrivalDate,
       String departureDate, String hotelCity, double price)
    {
@@ -24,6 +29,11 @@ public class HotelFind
       this.hotelCity = hotelCity;
       this.price = price;
    }
+
+   public HotelFind(String arrivalDate)
+   {
+      this.arrivalDate = arrivalDate;
+   } // Find by hotel arrival date
 
    @Override
    public boolean equals(Object obj)
