@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
-<title>Person</title>
+    <title>Florida Package info</title>
 </head>
 <body>
-
-	Destination:
-	<span th:inline="text"> [[${packageDeal.destination}]] </span>
-	<br /> Departure Date:
-	<span th:inline="text"> [[${packageDeal.departureDate}]] </span>
-	<br /> Return Date:
-	<span th:inline="text"> [[${packageDeal.returnDate}]] </span>
-	<br />
-
+	
+	Destination: <span th:inline="text"> [[${packageDeal.destination}]] </span> <br />
+	Departure Date: <span th:inline="text"> [[${packageDeal.departureDate}]] </span> <br /> 
+	Return Date: <span th:inline="text"> [[${packageDeal.returnDate}]] </span> <br /> 
+	
 </body>
 </html>

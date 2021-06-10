@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
-<title>Person</title>
+    <title>User Signup show</title>
 </head>
 <body>
-	<h2 th:inline="text">Hello [[${user.Username}]]</h2>
-
-	Username:
-	<span th:inline="text"> [[${user.Username}]] </span>
-	<br /> Password:
-	<span th:inline="text"> [[${user.Password}]] </span>
-	<br /> First Name:
-	<span th:inline="text"> [[${user.firstName}]] </span>
-	<br /> Last Name:
-	<span th:inline="text"> [[${user.lastName}]] </span>
-	<br />
-
+	<h2 th:inline="text">Hello [[${user.Username}]] </h2>
+	
+	Username: <span th:inline="text"> [[${user.Username}]] </span> <br />
+	Password: <span th:inline="text"> [[${user.Password}]] </span> <br /> 
+	First Name: <span th:inline="text"> [[${user.firstName}]] </span> <br />
+	Last Name: <span th:inline="text"> [[${user.lastName}]] </span> <br /> 
+	
 </body>
 </html>

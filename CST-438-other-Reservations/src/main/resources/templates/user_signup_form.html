@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
-<title>Signup form</title>
+    <title>User Signup form</title>
 </head>
 <body>
 	<h2>Sign up form.</h2>
-	<form action="#" th:action="@{/usersignup}" th:object="${user}"
-		method="post">
-		Username: <input type="text" th:field="*{Username}" /> <span
-			th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}">
-		</span> <br /> Password: <input type="text" th:field="*{Password}" /> <span
-			th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}">
-		</span> <br /> First Name: <input type="text" th:field="*{firstName}" /> <span
-			th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">
-		</span> <br /> Last Name: <input type="text" th:field="*{lastName}" /> <span
-			th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">
-		</span> <br /> <input type="submit" value="Submit" />
+	<form action="#" th:action="@{/usersignup}" th:object="${user}" method="post">
+	Username: <input type="text" th:field="*{Username}" /> 
+		<span th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"> </span> <br />
+	Password: <input type="text" th:field="*{Password}" /> 
+	    <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"> </span> <br /> 
+	First Name: <input type="text" th:field="*{firstName}" /> 
+	    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span> <br /> 
+	Last Name: <input type="text" th:field="*{lastName}" /> 
+	    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span> <br /> 
+	 
+	<input type="submit" value="Submit" />
 	</form>
 </body>
 </html>
