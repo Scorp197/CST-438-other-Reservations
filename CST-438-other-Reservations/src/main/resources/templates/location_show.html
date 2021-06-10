@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+
+<meta charset="UTF-8">
+<title>Location list</title>
+<style>
+.vertical-menu {
+	width: 500px;
+	width: 800px;
+	height: 300px;
+	overflow-y: auto;
+	justify-content: center;
+}
+
+.vertical-menu a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu a:hover {
+	background-color: #ccc;
+}
+
+.vertical-menu a.active {
+	background-color: #4CAF50;
+}
+
+.vertical-menu2 {
+	width: 500px;
+	height: 300px;
+	overflow-y: auto;
+	float: right;
+	margin: top;
+}
+
+.vertical-menu2 a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu2 a:hover {
+	background-color: #ccc;
+}
+
+.vertical-menu2 a.active {
+	background-color: #4CAF50;
+}
+
+#datepicker {
+	width: 180px;
+	margin: 0 20px 20px 20px;
+}
+
+#datepicker>span:hover {
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript"
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<script>
+	    $(function () {
+	        $('#datepicker').datepicker({
+	            format: "dd/mm/yyyy",
+	            autoclose: true,
+	            todayHighlight: true,
+		        showOtherMonths: true,
+		        selectOtherMonths: true,
+		        autoclose: true,
+		        changeMonth: true,
+		        changeYear: true,
+		        orientation: "button"
+	        });
+	    });
+	</script>
+</head>
+<body>
+
+
+
+	<div class="vertical-menu">
+
+		<h1>originCity: San Diego</h1>
+
+		<a href="#" class="active"> Select a city</a> <a
+			href="/florida/locations"> Florida</a> <a href="lasvegas/locations">
+			Las Vegas</a> <a href="losangeles/locations"> Los Angeles</a>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<h2>Bootstrap Datepicker</h2>
+		</div>
+		<div class="row">
+			<div class='col-sm-6'>
+				<form>
+					<div class="form-group">
+						<div class='input-group date' id='datepicker'>
+							<input type='text' class="form-control" /> <span
+								class="input-group-addon"> <span
+								class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

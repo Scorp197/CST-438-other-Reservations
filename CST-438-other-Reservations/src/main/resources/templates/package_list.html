@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<title>Package List</title>
+</head>
+<body>
+	<a href="/package/reserve">Add a Reservation</a>
+	<br />
+	<table>
+		<tr>
+			<th>Package ID</th>
+			<th>Reserved</th>
+			<th>User ID</th>
+			<th>Airline ID</th>
+			<th>Hotel ID</th>
+			<th>Car ID</th>
+			<th>Description</th>
+		</tr>
+		<tr th:each="packageDeal : ${packagedeal}">
+			<td th:text="${package.packageId}"></td>
+			<td th:text="${package.reserved}"></td>
+			<td th:text="${package.userId}"></td>
+			<td th:text="${package.airlineId}"></td>
+			<td th:text="${package.hotelId}"></td>
+			<td th:text="${package.carId}"></td>
+			<td th:text="${package.pkgDescription}"></td>
+		</tr>
+	</table>
+</body>
+</html>
