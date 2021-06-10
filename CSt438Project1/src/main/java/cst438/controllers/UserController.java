@@ -22,7 +22,7 @@ public class UserController {
 	@GetMapping("/users")
 	public String getAllUserData(Model model) 
 	{	
-		Iterable<User> project1 = userRepository.findAllOrderByMovieTitleMovieRating();
+		Iterable<User> project1 = userRepository.findAllOrderByUsername();
 		model.addAttribute("project1", project1);
 		return "user_list"; 
 	}
