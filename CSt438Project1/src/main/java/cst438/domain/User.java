@@ -32,9 +32,6 @@ public class User {
 	private String lastName;
 	
 
-	
-	
-	
 //	@NotNull
 //	@Size(min=3, max=25)
 //	private String originCity;
@@ -47,7 +44,7 @@ public class User {
 		
 	}
 	
-	public User(@NotNull int id, String Username, String Password, String originCity, String destination, String departureDate, String returnDate) {
+	public User(@NotNull int id, String Username, String Password, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.Username = Username;
