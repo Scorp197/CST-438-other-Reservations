@@ -11,24 +11,14 @@
 		<form action="#" th:action="@{/florida/locations}" th:object="${packagedeal}" method="post">
 			<div>
 				<strong>Package Deals:</strong>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="orlando" name="price" value="orlando">
-					<label for="orlando"> Magic Kingdom- Bay Lake Florida + 3 day vacation $7000</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="lasvegas" name="price" value="lasvegas">
-					<label for="lasvegas"> Universal Orlando Resort + 5 days $6000</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="newyork" name="price" value="newyork">
-					<label for="newyork"> Disney's Hollywood Studios- Bay Lake + 6 days $5000</label>
-				</div>
-				<div class="form-check form-check-inline">
-					<input type="radio" id="losangeles" name="price" value="losangeles">
-					<label for="losangeles"> SeaWorld Orlando + 7 days $4000</label>
-				</div>				
-			</div>
-			<br> <input type="submit" value="Submit" />
+				Destination: <input type="text" th:field="*{destination}" /> 
+		<span th:if="${#fields.hasErrors('destination')}" th:errors="*{destination}"> </span> <br />
+			DepartureDate: <input type="text" th:field="*{departureDate}" /> 
+		<span th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}"> </span> <br />
+			Return date: <input type="text" th:field="*{returnDate}" /> 
+		<span th:if="${#fields.hasErrors('returnDate')}" th:errors="*{returnDate}"> </span> <br />
+			<br> 
+			<input type="submit" value="Submit" />
 		</form>
 	</div>
 </body>

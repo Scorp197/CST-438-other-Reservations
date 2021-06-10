@@ -5,16 +5,16 @@
 </head>
 <body>
 	<h2>Sign up form.</h2>
-	<form action="#" th:action="@{/usersignup}" th:object="${movie}" method="post">
+	<form action="#" th:action="@{/usersignup}" th:object="${user}" method="post">
 	Username: <input type="text" th:field="*{Username}" /> 
 		<span th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"> </span> <br />
 	Password: <input type="text" th:field="*{Password}" /> 
 	    <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"> </span> <br /> 
-	    City of Origin: <input type="text" th:field="*{originCity}" /> 
-	    <span th:if="${#fields.hasErrors('originCity')}" th:errors="*{originCity}"> </span> <br />
-	    
-	   
-	    
+	First Name: <input type="text" th:field="*{firstName}" /> 
+	    <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"> </span> <br /> 
+	Last Name: <input type="text" th:field="*{lastName}" /> 
+	    <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"> </span> <br /> 
+	 
 	<input type="submit" value="Submit" />
 	</form>
 </body>

@@ -1,10 +1,9 @@
 package cst438.domain;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -19,15 +18,27 @@ public class User {
 	@Size(min=3, max=25)
 	private String Username;
 	
-	
 	@NotNull
 	@Size(min=3, max=25)
 	private String Password;
 	
+	
 	@NotNull
 	@Size(min=3, max=25)
-	private String originCity;
+	private String firstName;
 	
+	@NotNull
+	@Size(min=3, max=25)
+	private String lastName;
+	
+
+	
+	
+	
+//	@NotNull
+//	@Size(min=3, max=25)
+//	private String originCity;
+//	
 	
 	private String date;
 	
@@ -36,20 +47,40 @@ public class User {
 		
 	}
 	
-	public User(@NotNull String Username, String Password) {
+	public User(@NotNull int id, String Username, String Password, String originCity, String destination, String departureDate, String returnDate) {
 		super();
 		this.id = id;
 		this.Username = Username;
 		this.Password = Password;
-		this.originCity = originCity;
+		this.firstName = firstName;
+		this.lastName = lastName;
+//		this.originCity = originCity;
+		
 	}
 	
-	public String getOriginCity() {
-		return originCity;
+
+//	public String getOriginCity() {
+//		return originCity;
+//	}
+//
+//	public void setOriginCity(String originCity) {
+//		this.originCity = originCity;
+//	}
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setOriginCity(String originCity) {
-		this.originCity = originCity;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public long getId() { return id; }
