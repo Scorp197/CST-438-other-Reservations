@@ -9,7 +9,6 @@
 	<table>
 		<tr>
 			<th>Package ID</th>
-			<th>Reserved</th>
 			<th>User ID</th>
 			<th>Airline ID</th>
 			<th>Hotel ID</th>
@@ -18,7 +17,6 @@
 		</tr>
 		<tr th:each="packageDeal : ${packagedeal}">
 			<td th:text="${package.packageId}"></td>
-			<td th:text="${package.reserved}"></td>
 			<td th:text="${package.userId}"></td>
 			<td th:text="${package.airlineId}"></td>
 			<td th:text="${package.hotelId}"></td>

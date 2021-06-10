@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserRepository extends CrudRepository<User, Long> {
 
-   @Query("select m from User m order by movieTitle, date desc")
-   List<User> findAllOrderByMovieTitleMovieRating();
+   @Query("select u from User u order by username")
+   List<User> findAllOrderByUsername();
 }

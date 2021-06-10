@@ -14,7 +14,6 @@ public class Package
    @GeneratedValue
    private long packageId;
 
-   private boolean reserved;
    private long userId;
    private long airlineId;
    private long hotelId;
@@ -43,12 +42,11 @@ public class Package
    }
 
 
-   public Package(long packageId, boolean reserved, long userId, long airlineId,
+   public Package(long packageId, long userId, long airlineId,
       long hotelId, long carId, String pkgDescription, String destination, String departureDate, String returnDate, String originCity)
    {
       super();
       this.packageId = packageId;
-      this.reserved = reserved;
       this.userId = userId;
       this.airlineId = airlineId;
       this.hotelId = hotelId;
@@ -106,11 +104,6 @@ public class Package
       return userId;
    }
 
-   public boolean isReserved()
-   {
-      return reserved;
-   }
-
    public void setAirlineId(long airlineId)
    {
       this.airlineId = airlineId;
@@ -146,11 +139,6 @@ public class Package
    public void setPkgDescription(String pkgDescription)
    {
       this.pkgDescription = pkgDescription;
-   }
-
-   public void setReserved(boolean reserved)
-   {
-      this.reserved = reserved;
    }
 
    public void setReturnDate(String returnDate) {
