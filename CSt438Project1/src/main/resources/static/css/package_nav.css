@@ -40,3 +40,62 @@ body {
   color: white;
   font-family: cursive;
 }
+
+
+.vertical-menu {
+	width:500px;
+
+	width:800px;
+	height: 300px;
+	overflow-y: auto;
+	justify-content: center;
+}
+
+.vertical-menu a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu a:hover {
+background-color: #ccc;
+}
+
+.vertical-menu a.active {
+	background-color: #4CAF50;
+}
+	
+	
+	.vertical-menu2 {
+	width:500px;
+	height: 300px;
+	overflow-y: auto;
+	float: right;
+	margin: top;
+	
+}
+
+.vertical-menu2 a {
+	background-color: #eee;
+	color: black;
+	display: block;
+	padding: 12px;
+	text-decoration: none;
+}
+
+.vertical-menu2 a:hover {
+background-color: #ccc;
+}
+
+.vertical-menu2 a.active {
+	background-color: #4CAF50;
+}
+
+#datepicker {
+	width: 180px; margin: 0 20px 20px 20px;
+}	
+#datepicker > span:hover{
+cursor: pointer;
+}	

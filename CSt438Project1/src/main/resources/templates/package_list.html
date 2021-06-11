@@ -4,27 +4,18 @@
     <title>Package List</title>
 </head>
 <body>
-	<a href="/package/reserve">Add a Reservation</a>
-	<br/>
-	<table>
-		<tr>
-			<th>Package ID</th>
-			<th>Reserved</th>
-			<th>User ID</th>
-			<th>Airline ID</th>
-			<th>Hotel ID</th>
-			<th>Car ID</th>
-			<th>Description</th>
-		</tr>
-		<tr th:each="packageDeal : ${packagedeal}">
-			<td th:text="${package.packageId}"></td>
-			<td th:text="${package.reserved}"></td>
-			<td th:text="${package.userId}"></td>
-			<td th:text="${package.airlineId}"></td>
-			<td th:text="${package.hotelId}"></td>
-			<td th:text="${package.carId}"></td>
-			<td th:text="${package.pkgDescription}"></td>
-		</tr>
-	</table>
+	<a href="/packages">Add a Reservation</a>
+	<br />
+	
+	Package ID: <span th:inline="text"> [[${packageDeal.packageId}]] </span> <br />
+	User ID: <span th:inline="text"> [[${packageDeal.userId}]] </span> <br />
+	Airline ID: <span th:inline="text"> [[${packageDeal.airlineId}]] </span> <br />
+	Hotel ID: <span th:inline="text"> [[${packageDeal.hotelId}]] </span> <br />
+	Car ID: <span th:inline="text"> [[${packageDeal.carId}]] </span> <br />
+	Origin City: <span th:inline="text"> [[${packageDeal.originCity}]] </span> <br />
+	Destination City: <span th:inline="text"> [[${packageDeal.destination}]] </span> <br />
+	Description: <span th:inline="text"> [[${packageDeal.pkgDescription}]] </span> <br />
+	Departure Date: <span th:inline="text"> [[${packageDeal.departureDate}]] </span> <br /> 
+	Return Date: <span th:inline="text"> [[${packageDeal.returnDate}]] </span> <br /> 	
 </body>
 </html>

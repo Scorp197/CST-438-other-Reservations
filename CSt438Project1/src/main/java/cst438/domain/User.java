@@ -3,82 +3,102 @@ package cst438.domain;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
 public class User {
-	
-	@Id
-	@GeneratedValue
-	private long id;
-	
-	@NotNull
-	@Size(min=3, max=25)
-	private String Username;
-	
-	
-	@NotNull
-	@Size(min=3, max=25)
-	private String Password;
-	
-	@NotNull
-	@Size(min=3, max=25)
-	private String originCity;
-	
-	
-	private String date;
-	
-	
-	public User() {
-		
-	}
-	
-	public User(@NotNull String Username, String Password) {
-		super();
-		this.id = id;
-		this.Username = Username;
-		this.Password = Password;
-		this.originCity = originCity;
-	}
-	
-	public String getOriginCity() {
-		return originCity;
-	}
 
-	public void setOriginCity(String originCity) {
-		this.originCity = originCity;
-	}
+   @Id
+   @GeneratedValue
+   private long id;
 
-	public long getId() { return id; }
-	public void setId(long id) { this.id = id;}
+   //@NotNull
+   @Size(min=3, max=25)
+   private String Username;
 
-	public String getUsername() {
-		return Username;
-	}
+   //@NotNull
+   @Size(min=3, max=25)
+   private String Password;
 
-	public void setUsername(String Username) {
-		this.Username = Username;
-	}
+   //@NotNull
+   @Size(min=3, max=25)
+   private String firstName;
 
-	public String getPassword() {
-		return Password;
-	}
+   //@NotNull
+   @Size(min=3, max=25)
+   private String lastName;
 
-	public void setPassword(String Password) {
-		this.Password = Password;
-	}
+   //  @NotNull
+   //  @Size(min=3, max=25)
+   //  private String originCity;
+   //
 
-	public String getDate() {
-		return date;
-	}
+   private String date;
 
-	public void setDate(String date) {
-		this.date = date;
-	} 
-	
-	
-	
+   public User() {
+
+   }
+
+   public User(@NotNull int id, String Username, String Password, String originCity, String destination, String departureDate, String returnDate) {
+      super();
+      this.id = id;
+      this.Username = Username;
+      this.Password = Password;
+      this.firstName = firstName;
+      this.lastName = lastName;
+      //      this.originCity = originCity;
+
+   }
+
+   //  public String getOriginCity() {
+   //      return originCity;
+   //  }
+   //
+   //  public void setOriginCity(String originCity) {
+   //      this.originCity = originCity;
+   //  }
+
+   public String getDate() {
+      return date;
+   }
+
+   public String getFirstName() {
+      return firstName;
+   }
+
+   public long getId() { return id; }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public String getPassword() {
+      return Password;
+   }
+   public String getUsername() {
+      return Username;
+   }
+
+   public void setDate(String date) {
+      this.date = date;
+   }
+
+   public void setFirstName(String firstName) {
+      this.firstName = firstName;
+   }
+
+   public void setId(long id) { this.id = id;}
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+
+   public void setPassword(String Password) {
+      this.Password = Password;
+   }
+
+   public void setUsername(String Username) {
+      this.Username = Username;
+   }
 }
