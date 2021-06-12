@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html xmlns:th="www.thymeleaf.org">
 <head>
-<title>Signup form</title>
+    <title>Login form</title>
 </head>
 <body>
 	<h2>Login form.</h2>
-	<form action="#" th:action="@{/userlogin}" th:object="${user}"
-		method="post">
-		Username: <input type="text" th:field="*{Username}" /> <span
-			th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}">
-		</span> <br /> Password: <input type="text" th:field="*{Password}" /> <span
-			th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}">
-		</span> <br /> <input type="submit" value="Submit" />
+	<form action="#" th:action="@{/userlogin}" th:object="${user}" method="post">
+	Email: <input type="text" th:field="*{email}" /> 
+		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span> <br />
+	Password: <input type="text" th:field="*{Password}" /> 
+	    <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"> </span> <br />     
+	    
+
+	<input type="submit" value="Submit" />
 	</form>
 </body>
 </html>
+
+	

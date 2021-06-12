@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="www.thymeleaf.org">
+
+<head>
+
+<title>Package Show</title>
+
+</head>
+
+<body>
+
+	<form action="#" th:action="@{/florida/locations}"
+		th:object="${packagedeal}" method="post">
+
+		Package ID: <input type="text" th:field="*{packageId}" /> <span
+			th:if="${#fields.hasErrors('packageId')}" th:errors="*{packageId}">
+		</span> <br /> User ID: <input type="text" th:field="*{userId}" /> <span
+			th:if="${#fields.hasErrors('userId')}" th:errors="*{userId}">
+		</span> <br /> Airline ID: <input type="text" th:field="*{airlineId}" /> <span
+			th:if="${#fields.hasErrors('airlineId')}" th:errors="*{airlineId}">
+		</span> <br /> Hotel ID: <input type="text" th:field="*{hotelId}" /> <span
+			th:if="${#fields.hasErrors('hotelId')}" th:errors="*{hotelId}">
+		</span> <br /> Car ID: <input type="text" th:field="*{carId}" /> <span
+			th:if="${#fields.hasErrors('carId')}" th:errors="*{carId}"> </span> <br />
+
+		Origin City: <input type="text" th:field="*{originCity}" /> <span
+			th:if="${#fields.hasErrors('originCity')}" th:errors="*{originCity}">
+		</span> <br /> Destination City: <input type="text"
+			th:field="*{destination}" /> <span
+			th:if="${#fields.hasErrors('destination')}"
+			th:errors="*{destination}"> </span> <br /> Description: <input
+			type="text" th:field="*{pkgDescription}" /> <span
+			th:if="${#fields.hasErrors('pkgDescription')}"
+			th:errors="*{pkgDescription}"> </span> <br /> Departure Date: <input
+			type="text" th:field="*{departureDate}" /> <span
+			th:if="${#fields.hasErrors('departureDate')}"
+			th:errors="*{departureDate}"> </span> <br /> Return Date: <input
+			type="text" th:field="*{returnDate}" /> <span
+			th:if="${#fields.hasErrors('returnDate')}" th:errors="*{returnDate}">
+		</span> <br /> <input type="submit" value="Submit" />
+</body>
+
+</html>

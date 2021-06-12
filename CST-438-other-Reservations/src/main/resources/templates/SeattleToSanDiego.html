@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Seattle to San Diego</title>
+</head>
+<body>
+<h1>Package Deals for Seattle to San Diego</h1>
+		<p>Select one of the following offers:</p>
+		<form action="#" th:action="@{/SeattleToSanDiego}" th:object="${packagedeal}" method="post">
+			<div>
+				<strong>Package Deals:</strong>
+			DepartureDate: <input type="text" th:field="*{departureDate}" /> 
+		<span th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}"> </span> <br />
+			Return date: <input type="text" th:field="*{returnDate}" /> 
+		<span th:if="${#fields.hasErrors('returnDate')}" th:errors="*{returnDate}"> </span> <br />
+			<br> 
+			<input type="submit" value="Submit" />
+		</form>
+
+</body>
+</html>

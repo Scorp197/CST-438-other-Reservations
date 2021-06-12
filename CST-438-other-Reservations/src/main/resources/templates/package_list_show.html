@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Package List</title>
+</head>
+<body>
+	<a href="/locations">Add a Reservation</a>
+	<br />
+	
+	Package ID: <span th:inline="text"> [[${packagedeal.packageId}]] </span> <br />
+	User ID: <span th:inline="text"> [[${packagedeal.userId}]] </span> <br />
+	Airline ID: <span th:inline="text"> [[${packagedeal.airlineId}]] </span> <br />
+	Hotel ID: <span th:inline="text"> [[${packagedeal.hotelId}]] </span> <br />
+	Car ID: <span th:inline="text"> [[${packagedeal.carId}]] </span> <br />
+	Origin City: <span th:inline="text"> [[${packagedeal.originCity}]] </span> <br />
+	Destination City: <span th:inline="text"> [[${packagedeal.destination}]] </span> <br />
+	Description: <span th:inline="text"> [[${packagedeal.pkgDescription}]] </span> <br />
+	Departure Date: <span th:inline="text"> [[${packagedeal.departureDate}]] </span> <br /> 
+	Return Date: <span th:inline="text"> [[${packagedeal.returnDate}]] </span> <br /> 	
+</body>
+</html>

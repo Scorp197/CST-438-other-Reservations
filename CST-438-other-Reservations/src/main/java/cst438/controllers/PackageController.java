@@ -1,4 +1,3 @@
-
 package cst438.controllers;
 
 import javax.validation.Valid;
@@ -26,7 +25,7 @@ public class PackageController
    {
       Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      return "florida_packages";
+      return "packages";
    }
 
    @GetMapping("/package/reserve") // A new reservation from a form
@@ -42,11 +41,11 @@ public class PackageController
       model.addAttribute("packagedeal", packageDeal);
       {
          if (result.hasErrors())  {
-            return "florida_packages";
+            return "packages";
          }
-         //          packageDeal.setDate(new java.util.Date().toString());
+         //       packageDeal.setDate(new java.util.Date().toString());
          packageRepository.save(packageDeal);
-         return "florida_package_info";
+         return "package_list_show";
       }
    }
 
@@ -103,4 +102,3 @@ public class PackageController
       return "package_show";
    }
 }
-
