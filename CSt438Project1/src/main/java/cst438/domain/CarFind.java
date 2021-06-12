@@ -1,41 +1,104 @@
 package cst438.domain;
 
-public class CarFind
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
+public class CarFind implements List<CarFind>
 {
    // Fields from the car website
-   int carId;
-   String carName;
-   String reserveDate;
-   String returnDate;
-   String carCity;
+   int id;
+   String make;
+   String model;
+   String fuel;
+   String transmission;
+   int year;
    double price;
+   String city;
 
    public CarFind()
    {
    } // Empty Constructor
 
 
-   public CarFind(int carId)
+   public CarFind(int id)
    {
-      this.carId = carId;
+      this.id = id;
    } // Find by Car ID
 
-   public CarFind(int carId, String carName, String reserveDate,
-      String returnDate, String carCity, double price)
+
+
+   public CarFind(int id, String make, String model, String fuel,
+      String transmission, int year, double price, String city)
    {
       super();
-      this.carId = carId;
-      this.carName = carName;
-      this.reserveDate = reserveDate;
-      this.returnDate = returnDate;
-      this.carCity = carCity;
+      this.id = id;
+      this.make = make;
+      this.model = model;
+      this.fuel = fuel;
+      this.transmission = transmission;
+      this.year = year;
       this.price = price;
+      this.city = city;
    }
 
-   public CarFind(String reserveDate)
+
+   @Override
+   public boolean add(CarFind e)
    {
-      this.reserveDate = reserveDate;
-   } // Find by Car reservation date
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public void add(int index, CarFind element)
+   {
+      // TODO Auto-generated method stub
+
+   }
+
+
+   @Override
+   public boolean addAll(Collection<? extends CarFind> c)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public boolean addAll(int index, Collection<? extends CarFind> c)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public void clear()
+   {
+      // TODO Auto-generated method stub
+
+   }
+
+
+   @Override
+   public boolean contains(Object o)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public boolean containsAll(Collection<?> c)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
 
    @Override
    public boolean equals(Object obj)
@@ -53,27 +116,47 @@ public class CarFind
          return false;
       }
       CarFind other = (CarFind) obj;
-      if (carId != other.carId)
+      if (city == null)
       {
-         return false;
-      }
-      if (carName == null)
-      {
-         if (other.carName != null)
+         if (other.city != null)
          {
             return false;
          }
-      } else if (!carName.equals(other.carName))
+      } else if (!city.equals(other.city))
       {
          return false;
       }
-      if (carCity == null)
+      if (fuel == null)
       {
-         if (other.carCity != null)
+         if (other.fuel != null)
          {
             return false;
          }
-      } else if (!carCity.equals(other.carCity))
+      } else if (!fuel.equals(other.fuel))
+      {
+         return false;
+      }
+      if (id != other.id)
+      {
+         return false;
+      }
+      if (make == null)
+      {
+         if (other.make != null)
+         {
+            return false;
+         }
+      } else if (!make.equals(other.make))
+      {
+         return false;
+      }
+      if (model == null)
+      {
+         if (other.model != null)
+         {
+            return false;
+         }
+      } else if (!model.equals(other.model))
       {
          return false;
       }
@@ -82,114 +165,276 @@ public class CarFind
       {
          return false;
       }
-      if (reserveDate == null)
+      if (transmission == null)
       {
-         if (other.reserveDate != null)
+         if (other.transmission != null)
          {
             return false;
          }
-      } else if (!reserveDate.equals(other.reserveDate))
+      } else if (!transmission.equals(other.transmission))
       {
          return false;
       }
-      if (returnDate == null)
-      {
-         if (other.returnDate != null)
-         {
-            return false;
-         }
-      } else if (!returnDate.equals(other.returnDate))
+      if (year != other.year)
       {
          return false;
       }
       return true;
    }
 
-   public int getCarId()
+
+   @Override
+   public CarFind get(int index)
    {
-      return carId;
+      // TODO Auto-generated method stub
+      return null;
    }
 
-   public String getCarName()
+
+   public String getCity()
    {
-      return carName;
+      return city;
    }
 
-   public String getDestinationCity()
+
+   public String getFuel()
    {
-      return carCity;
+      return fuel;
    }
+
+
+   public int getId()
+   {
+      return id;
+   }
+
+
+   public String getMake()
+   {
+      return make;
+   }
+
+
+   public String getModel()
+   {
+      return model;
+   }
+
 
    public double getPrice()
    {
       return price;
    }
 
-   public String getReserveDate()
+
+   public String getTransmission()
    {
-      return reserveDate;
+      return transmission;
    }
 
-   public String getReturnDate()
+
+   public int getYear()
    {
-      return returnDate;
+      return year;
    }
+
 
    @Override
    public int hashCode()
    {
       final int prime = 31;
       int result = 1;
-      result = (prime * result) + carId;
-      result = (prime * result) + ((carName == null) ? 0 : carName.hashCode());
-      result = (prime * result)
-         + ((carCity == null) ? 0 : carCity.hashCode());
+      result = (prime * result) + ((city == null) ? 0 : city.hashCode());
+      result = (prime * result) + ((fuel == null) ? 0 : fuel.hashCode());
+      result = (prime * result) + id;
+      result = (prime * result) + ((make == null) ? 0 : make.hashCode());
+      result = (prime * result) + ((model == null) ? 0 : model.hashCode());
       long temp;
       temp = Double.doubleToLongBits(price);
       result = (prime * result) + (int) (temp ^ (temp >>> 32));
       result = (prime * result)
-         + ((reserveDate == null) ? 0 : reserveDate.hashCode());
-      result = (prime * result)
-         + ((returnDate == null) ? 0 : returnDate.hashCode());
+         + ((transmission == null) ? 0 : transmission.hashCode());
+      result = (prime * result) + year;
       return result;
    }
 
-   public void setCarId(int carId)
+
+   @Override
+   public int indexOf(Object o)
    {
-      this.carId = carId;
+      // TODO Auto-generated method stub
+      return 0;
    }
 
-   public void setCarName(String carName)
+
+   @Override
+   public boolean isEmpty()
    {
-      this.carName = carName;
+      // TODO Auto-generated method stub
+      return false;
    }
 
-   public void setDestinationCity(String carCity)
+
+   @Override
+   public Iterator<CarFind> iterator()
    {
-      this.carCity = carCity;
+      // TODO Auto-generated method stub
+      return null;
    }
+
+
+   @Override
+   public int lastIndexOf(Object o)
+   {
+      // TODO Auto-generated method stub
+      return 0;
+   }
+
+
+   @Override
+   public ListIterator<CarFind> listIterator()
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   @Override
+   public ListIterator<CarFind> listIterator(int index)
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   @Override
+   public CarFind remove(int index)
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   @Override
+   public boolean remove(Object o)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public boolean removeAll(Collection<?> c)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public boolean retainAll(Collection<?> c)
+   {
+      // TODO Auto-generated method stub
+      return false;
+   }
+
+
+   @Override
+   public CarFind set(int index, CarFind element)
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   public void setCity(String city)
+   {
+      this.city = city;
+   }
+
+
+   public void setFuel(String fuel)
+   {
+      this.fuel = fuel;
+   }
+
+
+   public void setId(int id)
+   {
+      this.id = id;
+   }
+
+
+   public void setMake(String make)
+   {
+      this.make = make;
+   }
+
+
+   public void setModel(String model)
+   {
+      this.model = model;
+   }
+
 
    public void setPrice(double price)
    {
       this.price = price;
    }
 
-   public void setReserveDate(String reserveDate)
+
+   public void setTransmission(String transmission)
    {
-      this.reserveDate = reserveDate;
+      this.transmission = transmission;
    }
 
-   public void setReturnDate(String returnDate)
+
+   public void setYear(int year)
    {
-      this.returnDate = returnDate;
+      this.year = year;
    }
+
+
+   @Override
+   public int size()
+   {
+      // TODO Auto-generated method stub
+      return 0;
+   }
+
+
+   @Override
+   public List<CarFind> subList(int fromIndex, int toIndex)
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   @Override
+   public Object[] toArray()
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
+
+   @Override
+   public <T> T[] toArray(T[] a)
+   {
+      // TODO Auto-generated method stub
+      return null;
+   }
+
 
    @Override
    public String toString()
    {
-      return "CarFind [carId=" + carId + ", carName=" + carName
-         + ", reserveDate=" + reserveDate + ", returnDate=" + returnDate
-         + ", carCity=" + carCity + ", price=" + price + "]";
+      return "CarFind [id=" + id + ", make=" + make + ", model=" + model
+         + ", fuel=" + fuel + ", transmission=" + transmission + ", year="
+         + year + ", price=" + price + ", city=" + city + "]";
    }
+
+
 
 }
