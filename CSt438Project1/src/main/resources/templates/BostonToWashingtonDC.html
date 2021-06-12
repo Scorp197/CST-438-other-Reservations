@@ -5,11 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Package Deals</h1>
+<h1>Package Deals for Boston to Washington</h1><br>
 		<p>Select one of the following offers:</p>
 		<form action="#" th:action="@{/BostonToWashington}" th:object="${packagedeal}" method="post">
 			<div>
-				<strong>Package Deals for Boston to Washington D.C:</strong>
 			DepartureDate: <input type="text" th:field="*{departureDate}" /> 
 		<span th:if="${#fields.hasErrors('departureDate')}" th:errors="*{departureDate}"> </span> <br />
 			Return date: <input type="text" th:field="*{returnDate}" /> 
