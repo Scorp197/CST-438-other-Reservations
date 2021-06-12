@@ -2,8 +2,8 @@ package cst438.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -11,7 +11,7 @@ public class Package
 
 {
    @Id
-   @GeneratedValue
+   @GeneratedValue(strategy=GenerationType.IDENTITY)
    private long packageId;
 
    private long userId;
@@ -20,19 +20,19 @@ public class Package
    private long carId;
    private String pkgDescription;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String destination;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String departureDate;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String returnDate;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String originCity;
 

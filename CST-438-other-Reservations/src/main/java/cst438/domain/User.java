@@ -13,20 +13,20 @@ public class User {
    @GeneratedValue
    private long id;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String Username;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String Password;
 
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String firstName;
 
-   @NotNull
+   //@NotNull
    @Size(min=3, max=25)
    private String lastName;
 

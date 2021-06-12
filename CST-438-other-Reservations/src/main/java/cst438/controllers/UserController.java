@@ -1,4 +1,5 @@
 package cst438.controllers;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,16 +12,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import cst438.domain.User;
 import cst438.domain.UserRepository;
 
-
 @Controller
-public class UserController {
-
+public class UserController
+{
 
    @Autowired
    UserRepository userRepository;
 
-
-   //add logic that checks if username and password is the same as the one the user signed up with
+   // add logic that checks if username and password is the same as the one the
+   // user signed up with
    @GetMapping("/userlogin")
    public String createUserLoginForm(Model model)
    {
@@ -28,7 +28,6 @@ public class UserController {
       model.addAttribute("user", user);
       return "user_login_form";
    }
-
 
    @GetMapping("/usersignup")
    public String createUserSignupForm(Model model)
@@ -38,20 +37,22 @@ public class UserController {
       return "user_signup_form";
    }
 
-
    @GetMapping("/users")
    public String getAllUserData(Model model)
    {
-      Iterable<User> project1 = userRepository.findAllOrderByMovieTitleMovieRating();
+      Iterable<User> project1 = userRepository.findAllOrderByUsername();
       model.addAttribute("project1", project1);
       return "user_list";
    }
 
    @PostMapping("/userlogin") // A new reservation from a form
-   public String UserloginForm(@Valid User user, BindingResult result, Model model) {
-      model.addAttribute("user", user); //new line added
+   public String UserloginForm(@Valid User user, BindingResult result,
+      Model model)
+   {
+      model.addAttribute("user", user); // new line added
 
-      if (result.hasErrors()) {
+      if (result.hasErrors())
+      {
          return "user_login_form";
       }
       user.setDate(new java.util.Date().toString());
@@ -60,12 +61,13 @@ public class UserController {
    }
 
    @PostMapping("/usersignup") // A new reservation from a form
-   public String UserSignupForm(@Valid User user,
-      BindingResult result,
-      Model model) {
+   public String UserSignupForm(@Valid User user, BindingResult result,
+      Model model)
+   {
       model.addAttribute("user", user);
       {
-         if (result.hasErrors())  {
+         if (result.hasErrors())
+         {
             return "user_signup_form";
          }
          user.setDate(new java.util.Date().toString());
