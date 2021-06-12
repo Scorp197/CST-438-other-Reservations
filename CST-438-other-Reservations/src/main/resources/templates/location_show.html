@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<link
-	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
 
 <meta charset="UTF-8">
 <title>Location list</title>
 <style>
 .vertical-menu {
-	width: 500px;
-	width: 800px;
-	height: 300px;
+	width:500px;
+
+	width:400px;
+	height: 600px;
 	overflow-y: auto;
 	justify-content: center;
 }
@@ -34,19 +28,21 @@
 }
 
 .vertical-menu a:hover {
-	background-color: #ccc;
+background-color: #ccc;
 }
 
 .vertical-menu a.active {
 	background-color: #4CAF50;
 }
-
-.vertical-menu2 {
-	width: 500px;
+	
+	
+	.vertical-menu2 {
+	width:500px;
 	height: 300px;
 	overflow-y: auto;
 	float: right;
 	margin: top;
+	
 }
 
 .vertical-menu2 a {
@@ -58,7 +54,7 @@
 }
 
 .vertical-menu2 a:hover {
-	background-color: #ccc;
+background-color: #ccc;
 }
 
 .vertical-menu2 a.active {
@@ -66,17 +62,14 @@
 }
 
 #datepicker {
-	width: 180px;
-	margin: 0 20px 20px 20px;
-}
-
-#datepicker>span:hover {
-	cursor: pointer;
-}
+	width: 180px; margin: 0 20px 20px 20px;
+}	
+#datepicker > span:hover{
+cursor: pointer;
+}	
 </style>
-<script type="text/javascript"
-	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
-<script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js"></script>
+	<script >
 	    $(function () {
 	        $('#datepicker').datepicker({
 	            format: "dd/mm/yyyy",
@@ -93,36 +86,54 @@
 	</script>
 </head>
 <body>
+		
 
 
+<div class="vertical-menu">
 
-	<div class="vertical-menu">
+<h1>Package Cities </h1>
 
-		<h1>originCity: San Diego</h1>
+<a href="#" class="active"> Select a city</a>
 
-		<a href="#" class="active"> Select a city</a> <a
-			href="/florida/locations"> Florida</a> <a href="lasvegas/locations">
-			Las Vegas</a> <a href="losangeles/locations"> Los Angeles</a>
-	</div>
+<a href="/SeattleToNewYork">Seattle to New York</a>
+<a href="/SeattleToSanDiego">Seattle to San Diego</a>
+<a href="/SanFranciscoToWashingtonDC">San Francisco to Washington D.C</a>
+<a href="/SanFranciscoToSeattle">San Francisco to Seattle</a>
+<a href="/SanFranciscoToBoston">San Francisco to Boston</a>
+<a href="/SanDiegoToWashingtonDC">San Diego to Washington D.C</a>
+<a href="/SanDiegoToSanFrancisco">San Diego to San Francisco</a>
+<a href="/SanDiegoToBoston">San Diego to Boston</a>
+<a href="/SanDiegoToSeattle">San Diego to Seattle</a>
+<a href="/NewYorkToSanDiego">New York to San Diego</a>
+<a href="/NewYorkToBoston">New York to Boston</a>
+<a href="/BostonToSanFrancisco">Boston to San Francisco</a>
+<a href="/BostonToWashingtonDC">Boston to Washington D.C</a>
+<a href="/WashingtonDCToNewYork">Washington D.C. to New York</a>
+<a href="/WashingtonDCToSanDiego">Washington D.C. to San Diego</a>
 
-	<div class="container">
+	
+
+</div>	
+
+	<!-- <div class="container">
 		<div class="row">
 			<h2>Bootstrap Datepicker</h2>
 		</div>
 		<div class="row">
-			<div class='col-sm-6'>
-				<form>
-					<div class="form-group">
-						<div class='input-group date' id='datepicker'>
-							<input type='text' class="form-control" /> <span
-								class="input-group-addon"> <span
-								class="glyphicon glyphicon-calendar"></span>
-							</span>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
+	        <div class='col-sm-6'>
+	        	<form>
+		            <div class="form-group">
+		                <div class='input-group date' id='datepicker'>
+		                    <input type='text' class="form-control" />
+		                    <span class="input-group-addon">
+		                        <span class="glyphicon glyphicon-calendar"></span>
+		                    </span>
+		                </div>
+		            </div>
+		        </form>
+	        </div>
+	    </div>
+	</div> -->
 </body>
 </html>
+
