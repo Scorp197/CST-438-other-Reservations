@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import cst438.domain.CarFind;
+import cst438.domain.FlightFind;
+import cst438.domain.HotelFind;
 import cst438.domain.PackageRepository;
 import cst438.services.PackageService;
 
@@ -25,27 +28,30 @@ public class ResRestController
 
    // http://localhost:8080/api/getCarByCity/seattle
    @GetMapping(value = "/getCarByCity/{city}")
-   public void getCarByCity(@PathVariable String city)
+   public CarFind getCarByCity(@PathVariable String city)
    {
 
       logger.info("Car Service Get Mapping city: {}", city);
+      return new CarFind();
 
    }
 
    // http://localhost:8080/api/getFlightByCity/seattle/boston
    @GetMapping(value = "/getFlightByCity/{originCity}/{destination}")
-   public void getFlightByCity(@PathVariable String originCity, @PathVariable String destination)
+   public FlightFind getFlightByCity(@PathVariable String originCity, @PathVariable String destination)
    {
 
       logger.info("Airline Service Get Mapping originCity: {} and destination: {}", originCity, destination);
+      return new FlightFind();
 
    }
    // http://localhost:8080/api/getHotelByCity/seattle
    @GetMapping(value = "/getHotelByCity/{city}")
-   public void getHotelByCity(@PathVariable String city)
+   public HotelFind getHotelByCity(@PathVariable String city)
    {
 
       logger.info("Hotel Service Get Mapping city: {}", city);
+      return new HotelFind();
 
 
    }
