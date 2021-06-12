@@ -6,8 +6,8 @@
 <body>
 	<h2>Sign up form.</h2>
 	<form action="#" th:action="@{/usersignup}" th:object="${user}" method="post">
-	Username: <input type="text" th:field="*{Username}" /> 
-		<span th:if="${#fields.hasErrors('Username')}" th:errors="*{Username}"> </span> <br />
+	Email: <input type="text" th:field="*{email}" /> 
+		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"> </span> <br />
 	Password: <input type="text" th:field="*{Password}" /> 
 	    <span th:if="${#fields.hasErrors('Password')}" th:errors="*{Password}"> </span> <br /> 
 	First Name: <input type="text" th:field="*{firstName}" /> 
