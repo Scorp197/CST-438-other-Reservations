@@ -47,7 +47,7 @@ public class PackageService {
       JsonNode json = response.getBody();
       log.info("Status code from car server:" + response.getStatusCodeValue());
 
-      int id = json.get("carId").asInt();
+      int id = json.get("id").asInt();
       String make = json.get("make").asText();
       String model = json.get("model").asText();
       String fuel = json.get("fuel").asText();
@@ -83,12 +83,12 @@ public class PackageService {
          departureTime, numberOfStops, originCity, destinationCity, price);
    }
 
-   public HotelFind getHotel(String hotelCity)
+   public HotelFind getHotel(String hotel_City)
    {
       // display hotel for package
 
       ResponseEntity<JsonNode> response = restTemplate.getForEntity(
-         hotelUrl + "/api/gethotels?" + hotelCity,
+         hotelUrl + "/api/gethotels?" + hotel_City,
          JsonNode.class);
 
       JsonNode json = response.getBody();
@@ -98,11 +98,11 @@ public class PackageService {
       String hotelName = json.get("hotelName").asText();
       String arrivalDate = json.get("arrivalDate").asText();
       String departureDate = json.get("departureDate").asText();
-      String hotel_City = json.get("hotelCity").asText();
+      String hotelCity = json.get("hotelCity").asText();
       double price = json.get("price").asDouble();
 
       return new HotelFind(hotelId, hotelName, arrivalDate,
-         departureDate, hotel_City, price);
+         departureDate, hotelCity, price);
    }
 
 }
