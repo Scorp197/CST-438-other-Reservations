@@ -1,7 +1,9 @@
 package cst438.domain;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -10,18 +12,18 @@ import javax.validation.constraints.Size;
 public class User {
 
    @Id
-   @GeneratedValue
+   @GeneratedValue(strategy=GenerationType.IDENTITY)
    private long id;
 
    //@NotNull
-   @Size(min=3, max=25)
-   private String Username;
+   @Size(min=3, max=40)
+   public String email;
 
    //@NotNull
    @Size(min=3, max=25)
    private String Password;
 
-   //@NotNull
+//   @NotNull
    @Size(min=3, max=25)
    private String firstName;
 
@@ -29,10 +31,6 @@ public class User {
    @Size(min=3, max=25)
    private String lastName;
 
-   //  @NotNull
-   //  @Size(min=3, max=25)
-   //  private String originCity;
-   //
 
    private String date;
 
@@ -40,24 +38,16 @@ public class User {
 
    }
 
-   public User(@NotNull int id, String Username, String Password, String originCity, String destination, String departureDate, String returnDate) {
+   public User(@NotNull int id, String email, String Password, String firstName, String lastName) {
       super();
       this.id = id;
-      this.Username = Username;
+      this.email = email;
       this.Password = Password;
       this.firstName = firstName;
       this.lastName = lastName;
-      //      this.originCity = originCity;
 
    }
 
-   //  public String getOriginCity() {
-   //      return originCity;
-   //  }
-   //
-   //  public void setOriginCity(String originCity) {
-   //      this.originCity = originCity;
-   //  }
 
    public String getDate() {
       return date;
@@ -76,8 +66,8 @@ public class User {
    public String getPassword() {
       return Password;
    }
-   public String getUsername() {
-      return Username;
+   public String getemail() {
+      return email;
    }
 
    public void setDate(String date) {
@@ -98,7 +88,7 @@ public class User {
       this.Password = Password;
    }
 
-   public void setUsername(String Username) {
-      this.Username = Username;
+   public void setemail(String email) {
+      this.email = email;
    }
 }
