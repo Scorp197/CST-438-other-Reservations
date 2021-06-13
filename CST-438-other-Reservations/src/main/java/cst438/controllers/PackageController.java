@@ -15,17 +15,23 @@ import cst438.domain.PackageRepository;
 @Controller
 public class PackageController
 {
-
    @Autowired
    PackageRepository packageRepository;
 
-
-   @GetMapping("/florida/locations") // A new reservation from a form
-   public String createFloridaPackageLocations(Model model)
+   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
+   public String BostonToSanFranciscoPackageInfo(Model model)
    {
       Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      return "packages";
+      return "BostonToSanFrancisco";
+   }
+
+   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
+   public String BostonToWashingtonDCPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "BostonToWashingtonDC";
    }
 
    @GetMapping("/package/reserve") // A new reservation from a form
@@ -36,17 +42,12 @@ public class PackageController
       return "available_packages";
    }
 
-   @PostMapping("/florida/locations") // A new reservation from a form
-   public String FloridaPackageLocations(@Valid Package packageDeal, BindingResult result, Model model) {
+   @GetMapping("/package/new") // A new reservation from a form
+   public String createPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      {
-         if (result.hasErrors())  {
-            return "packages";
-         }
-         //       packageDeal.setDate(new java.util.Date().toString());
-         packageRepository.save(packageDeal);
-         return "package_list_show";
-      }
+      return "available_packages";
    }
 
    @GetMapping("/package") // Display packages
@@ -57,21 +58,20 @@ public class PackageController
       return "package_list";
    }
 
-   @GetMapping("/lasvegas/locations") // A new reservation from a form
-   public String LasVegasPackageLocations(Model model)
+   @GetMapping("/NewYorkToBoston") // A new reservation from a form
+   public String NewYorkToBostonPackageInfo(Model model)
    {
       Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      return "lasvegas_packages";
+      return "NewYorkToBoston";
    }
 
-
-   @GetMapping("/losangeles/locations") // A new reservation from a form
-   public String LosAngelesPackageLocations(Model model)
+   @GetMapping("/NewYorkToSanDiego") // A new reservation from a form
+   public String NewYorkToSanDiegoPackageInfo(Model model)
    {
       Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      return "losangeles_packages";
+      return "NewYorkToSanDiego";
    }
 
    @GetMapping("/packages") // A new reservation from a form
@@ -82,7 +82,6 @@ public class PackageController
       return "package_site";
    }
 
-
    @GetMapping("/locations") // A new reservation from a form
    public String PackageLocations(Model model)
    {
@@ -92,13 +91,102 @@ public class PackageController
    }
 
    @PostMapping("/package/new") // Process reservation
-   public String processPackageForm(@Valid Package packageDeal, BindingResult result, Model model)
+   public String processPackageForm(@Valid Package packageDeal,
+      BindingResult result, Model model)
    {
-      if(result.hasErrors())
+      if (result.hasErrors())
       {
          return "available_packages";
       }
       packageRepository.save(packageDeal);
       return "package_show";
+   }
+
+   @GetMapping("/SanDiegoToBoston") // A new reservation from a form
+   public String SanDiegoToBostonPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanDiegoToBoston";
+   }
+
+   @GetMapping("/SanDiegoToSanFrancisco") // A new reservation from a form
+   public String SanDiegoToSanFranciscoPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanDiegoToSanFrancisco";
+   }
+
+   @GetMapping("/SanDiegoToSeattle") // A new reservation from a form
+   public String SanDiegoToSeattlePackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanDiegoToSeattle";
+   }
+
+   @GetMapping("/SanDiegoToWashingtonDC") // A new reservation from a form
+   public String SanDiegoToWashingtonDCPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanDiegoToWashingtonDC";
+   }
+
+   @GetMapping("/SanFranciscoToBoston") // A new reservation from a form
+   public String SanFranciscoToBostonPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanFranciscoToBoston";
+   }
+
+   @GetMapping("/SanFranciscoToSeattle") // A new reservation from a form
+   public String SanFranciscoToSeattlePackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanFranciscoToSeattle";
+   }
+
+   @GetMapping("/SanFranciscoToWashingtonDC") // A new reservation from a form
+   public String SanFranciscoToWashingtonDCPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SanFranciscoToWashingtonDC";
+   }
+
+   @GetMapping("/SeattleToNewYork") // A new reservation from a form
+   public String SeattletoNewYorkPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SeattleToNewYork";
+   }
+
+   @GetMapping("/SeattleToSanDiego") // A new reservation from a form
+   public String SeattleToSanDiegoPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "SeattleToSanDiego";
+   }
+
+   @GetMapping("/WashingtonDCToNewYork") // A new reservation from a form
+   public String WashingtonDCToNewYorkPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "WashingtonDCToNewYork";
+   }
+
+   @GetMapping("/WashingtonDCToSanDiego") // A new reservation from a form
+   public String WashingtonDCToSanDiegoPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "WashingtonDCToSanDiego";
    }
 }
