@@ -30,6 +30,11 @@ public class ResRestController
    @Autowired
    private PackageService packageService;
 
+   @GetMapping(value = "/allpackages") // List all the packages saved to the table
+   public Iterable<cst438.domain.Package> getAllPackages() {
+      return packageRepository.findAll();
+   }
+
    // http://localhost:8080/api/getCarByCity/seattle
    @GetMapping(value = "/getCarByCity/{city}", produces = "application/json")
    public ResponseEntity<CarFind> getCarByCity(@PathVariable("city") String city)
