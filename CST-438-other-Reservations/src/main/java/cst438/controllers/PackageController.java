@@ -18,21 +18,21 @@ public class PackageController
    @Autowired
    PackageRepository packageRepository;
 
-   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
-   public String BostonToSanFranciscoPackageInfo(Model model)
-   {
-      Package packageDeal = new Package();
-      model.addAttribute("packagedeal", packageDeal);
-      return "BostonToSanFrancisco";
-   }
-
-   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
-   public String BostonToWashingtonDCPackageInfo(Model model)
-   {
-      Package packageDeal = new Package();
-      model.addAttribute("packagedeal", packageDeal);
-      return "BostonToWashingtonDC";
-   }
+   //   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
+   //   public String BostonToSanFranciscoPackageInfo(Model model)
+   //   {
+   //      Package packageDeal = new Package();
+   //      model.addAttribute("packagedeal", packageDeal);
+   //      return "BostonToSanFrancisco";
+   //   }
+   //
+   //   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
+   //   public String BostonToWashingtonDCPackageInfo(Model model)
+   //   {
+   //      Package packageDeal = new Package();
+   //      model.addAttribute("packagedeal", packageDeal);
+   //      return "BostonToWashingtonDC";
+   //   }
 
    @GetMapping("/package/reserve") // A new reservation from a form
    public String createPackage(Model model)

@@ -32,7 +32,7 @@ public class ResRestController
 
    // http://localhost:8080/api/getCarByCity/seattle
    @GetMapping(value = "/getCarByCity/{city}", produces = "application/json")
-   public ResponseEntity<List<CarFind>> getCarByCity(@PathVariable("city") String city)
+   public ResponseEntity<CarFind> getCarByCity(@PathVariable("city") String city)
    {
       logger.info("Car Service Get Mapping city: {}", city);
       // look up car information from the car service database.
@@ -42,25 +42,47 @@ public class ResRestController
       {
 
          // cars not found.  Send 404 return code.
-         return new ResponseEntity<List<CarFind>>( HttpStatus.NOT_FOUND);
+         return new ResponseEntity<CarFind>( HttpStatus.NOT_FOUND);
 
       }
 
       else
 
       {
+         CarFind car = cars.get(0); // Only select the first car in list
+
          // return 200 status code (OK) and car information in JSON format
-         return new ResponseEntity<List<CarFind>>(cars, HttpStatus.OK);
+         return new ResponseEntity<CarFind>(car, HttpStatus.OK);
 
       }
    }
+
    // http://localhost:8080/api/getFlightByCity/seattle/boston
-   @GetMapping(value = "/getFlightByCity/{originCity}/{destination}")
-   public FlightFind getFlightByCity(@PathVariable String originCity, @PathVariable String destination)
+   @GetMapping(value = "/getFlightByCity/{originCity}/{destination}", produces = "application/json")
+   public ResponseEntity<FlightFind> getFlightByCity(@PathVariable String originCity, @PathVariable String destination)
    {
 
       logger.info("Airline Service Get Mapping originCity: {} and destination: {}", originCity, destination);
-      return new FlightFind();
+      // look up flight information from the airline service database.
+      // There may be multiple airlines returned for the specified city.
+      List<FlightFind> flights = packageService.getFlight(originCity, destination);
+      if ( flights.size()==0)
+      {
+
+         // flights not found.  Send 404 return code.
+         return new ResponseEntity<FlightFind>( HttpStatus.NOT_FOUND);
+
+      }
+
+      else
+
+      {
+         FlightFind flight = flights.get(0); // Only select the first car in list
+
+         // return 200 status code (OK) and flight information in JSON format
+         return new ResponseEntity<FlightFind>(flight, HttpStatus.OK);
+
+      }
 
    }
 
