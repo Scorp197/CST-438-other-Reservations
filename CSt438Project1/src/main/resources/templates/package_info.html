@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Person</title>
+</head>
+<body>
+<form action="#" th:action="@{/package/new}" th:object="${packagedeal}" method="post">
+
+Airline Id: <span th:inline="text"> [[${packagedeal.airlineId}]] </span> <br />
+
+Origin City: <span th:inline="text"> [[${packagedeal.originCity}]] </span> <br />
+Destination: <span th:inline="text"> [[${packagedeal.destination}]] </span> <br />
+
+</body>
+</html>
