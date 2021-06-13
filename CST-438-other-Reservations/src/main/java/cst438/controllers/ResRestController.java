@@ -77,7 +77,7 @@ public class ResRestController
       else
 
       {
-         FlightFind flight = flights.get(0); // Only select the first car in list
+         FlightFind flight = flights.get(0); // Only select the first flight in list
 
          // return 200 status code (OK) and flight information in JSON format
          return new ResponseEntity<FlightFind>(flight, HttpStatus.OK);
