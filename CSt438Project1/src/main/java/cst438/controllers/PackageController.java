@@ -95,6 +95,15 @@ public class PackageController
       packageRepository.save(packageDeal);
       return "package_show";
    }
+   
+     @GetMapping("/package/new") // A new reservation from a form
+   public String createPackageInfo(Model model)
+   {
+      Package packageDeal = new Package();
+      model.addAttribute("packagedeal", packageDeal);
+      return "available_packages";
+   }
+   
 
    @GetMapping("/SanDiegoToBoston") // A new reservation from a form
    public String SanDiegoToBostonPackageInfo(Model model)
