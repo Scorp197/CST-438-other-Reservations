@@ -19,12 +19,12 @@ public class PackageController
    PackageRepository packageRepository;
    
    
-   @GetMapping("/package") // Display packages
-   public String getAllPackages(Model model)
+   @GetMapping("/package")
+   public String getAllPackageData(Model model)
    {
-      Iterable<Package> project1 = packageRepository.findAll();
-      model.addAttribute("project1", project1);
-      return "package_list";
+      Iterable<Package> packageDeal = packageRepository.findAll();
+      model.addAttribute("packagedeal", packageDeal);
+      return "package_list_show";
    }
    
    @PostMapping("/package/new") // Process reservation
@@ -70,21 +70,6 @@ public class PackageController
       return "location_show";
    }
    
-
-//   @PostMapping("/florida/locations") // A new reservation from a form
-//   public String FloridaPackageLocations(@Valid Package packageDeal, BindingResult result, Model model) {
-//	   model.addAttribute("packagedeal", packageDeal);
-//   {
-//      if (result.hasErrors())  {
-//			return "package_info";
-//		}	
-////      	packageDeal.setDate(new java.util.Date().toString());
-//		packageRepository.save(packageDeal);
-//		return "package_info_show";
-//   }
-//  }
- 
-
 
 @GetMapping("/packageInfo") // A new reservation from a form
 public String SeattletoNewYorkPackageInfo(Model model)
