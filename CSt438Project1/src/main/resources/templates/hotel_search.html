@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Hotel Search</title>
+</head>
+<body>
+	<br />
+	<br />
+	<tr th:each="hotelInfo : ${hotelInfo}">
+	Hotel ID: <span th:inline="text"> [[${hotelInfo.id}]] </span> <br />
+	Name: <span th:inline="text"> [[${hotelInfo.name}]] </span> <br />
+	Address: <span th:inline="text"> [[${hotelInfo.address}]] </span> <br />
+	<br />
+	</tr>
+</body>
+</html>
