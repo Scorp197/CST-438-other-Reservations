@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Airline Search</title>
+</head>
+<body>
+	<br />
+	<br />
+	<tr th:each="flightInfo : ${flightInfo}">
+	Flight ID: <span th:inline="text"> [[${flightInfo.flightId}]] </span> <br />
+	Flight Number: <span th:inline="text"> [[${flightInfo.flightNumber}]] </span> <br />
+	Airline Name: <span th:inline="text"> [[${flightInfo.airlineName}]] </span> <br />
+	Departure Date: <span th:inline="text"> [[${flightInfo.departureDate}]] </span> <br />
+	Departure Time: <span th:inline="text"> [[${flightInfo.departureTime}]] </span> <br /> 
+	Number of Stops: <span th:inline="text"> [[${flightInfo.numberOfStops}]] </span> <br /> 	
+	Origin City: <span th:inline="text"> [[${flightInfo.originCity}]] </span> <br />
+	Destination City: <span th:inline="text"> [[${flightInfo.destinationCity}]] </span> <br />
+	Price: <span th:inline="text"> [[${flightInfo.price}]] </span> <br /> 		 	
+	<br />
+	</tr>
+</body>
+</html>

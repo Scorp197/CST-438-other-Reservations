@@ -1,15 +1,20 @@
-
 package cst438.controllers;
 
 import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import cst438.domain.CarFind;
+import cst438.domain.FlightFind;
+import cst438.domain.HotelFind;
 import cst438.domain.Package;
 import cst438.domain.PackageRepository;
+import cst438.services.PackageService;
 
 @Controller
 public class PackageController
@@ -17,7 +22,30 @@ public class PackageController
 
    @Autowired
    PackageRepository packageRepository;
-   
+
+   @GetMapping("/package/airline_search")
+   public String getAirlineSearch(Model model)
+   {
+      FlightFind flightInfo = PackageService.searchFlight("seattle");
+      model.addAttribute("flightInfo", flightInfo);
+      return "airline_search";
+   }
+
+   @GetMapping("/package/car_search")
+   public String getCarSearch(Model model)
+   {
+      CarFind carInfo = PackageService.searchCar("boston");
+      model.addAttribute("carInfo", carInfo);
+      return "car_search";
+   }
+
+   @GetMapping("/package/hotel_search")
+   public String getHotelSearch(Model model)
+   {
+      HotelFind hotelInfo = PackageService.searchHotel();
+      model.addAttribute("hotelInfo", hotelInfo);
+      return "hotel_search";
+   }
    
    @GetMapping("/package")
    public String getAllPackageData(Model model)
