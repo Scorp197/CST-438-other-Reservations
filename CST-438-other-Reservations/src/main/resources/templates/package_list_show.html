@@ -6,7 +6,8 @@
 <body>
 	<a href="/locations">Add a Reservation</a>
 	<br />
-	
+	<br />
+	<tr th:each="packagedeal : ${packagedeal}">
 	Package ID: <span th:inline="text"> [[${packagedeal.packageId}]] </span> <br />
 	User ID: <span th:inline="text"> [[${packagedeal.userId}]] </span> <br />
 	Airline ID: <span th:inline="text"> [[${packagedeal.airlineId}]] </span> <br />
@@ -17,5 +18,7 @@
 	Description: <span th:inline="text"> [[${packagedeal.pkgDescription}]] </span> <br />
 	Departure Date: <span th:inline="text"> [[${packagedeal.departureDate}]] </span> <br /> 
 	Return Date: <span th:inline="text"> [[${packagedeal.returnDate}]] </span> <br /> 	
+	<br />
+	</tr>
 </body>
 </html>

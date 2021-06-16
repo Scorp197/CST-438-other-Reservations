@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Car Search</title>
+</head>
+<body>
+	<br />
+	<br />
+	<tr th:each="carInfo : ${carInfo}">
+	Car ID: <span th:inline="text"> [[${carInfo.id}]] </span> <br />
+	Make: <span th:inline="text"> [[${carInfo.make}]] </span> <br />
+	Model: <span th:inline="text"> [[${carInfo.model}]] </span> <br />
+	Fuel: <span th:inline="text"> [[${carInfo.fuel}]] </span> <br />
+	Transmission: <span th:inline="text"> [[${carInfo.transmission}]] </span> <br /> 
+	Year: <span th:inline="text"> [[${carInfo.year}]] </span> <br /> 	
+	Price: <span th:inline="text"> [[${carInfo.price}]] </span> <br /> 	
+	City: <span th:inline="text"> [[${carInfo.city}]] </span> <br /> 	
+	<br />
+	</tr>
+</body>
+</html>

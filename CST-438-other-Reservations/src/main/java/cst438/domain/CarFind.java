@@ -1,11 +1,6 @@
 package cst438.domain;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class CarFind implements List<CarFind>
+public class CarFind
 {
    // Fields from the car website
    int id;
@@ -14,7 +9,7 @@ public class CarFind implements List<CarFind>
    String fuel;
    String transmission;
    int year;
-   double price;
+   int price;
    String city;
 
    public CarFind()
@@ -30,7 +25,7 @@ public class CarFind implements List<CarFind>
 
 
    public CarFind(int id, String make, String model, String fuel,
-      String transmission, int year, double price, String city)
+      String transmission, int year, int price, String city)
    {
       super();
       this.id = id;
@@ -41,62 +36,6 @@ public class CarFind implements List<CarFind>
       this.year = year;
       this.price = price;
       this.city = city;
-   }
-
-
-   @Override
-   public boolean add(CarFind e)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public void add(int index, CarFind element)
-   {
-      // TODO Auto-generated method stub
-
-   }
-
-
-   @Override
-   public boolean addAll(Collection<? extends CarFind> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public boolean addAll(int index, Collection<? extends CarFind> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public void clear()
-   {
-      // TODO Auto-generated method stub
-
-   }
-
-
-   @Override
-   public boolean contains(Object o)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public boolean containsAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
    }
 
 
@@ -160,8 +99,7 @@ public class CarFind implements List<CarFind>
       {
          return false;
       }
-      if (Double.doubleToLongBits(price) != Double
-         .doubleToLongBits(other.price))
+      if (price != other.price)
       {
          return false;
       }
@@ -180,14 +118,6 @@ public class CarFind implements List<CarFind>
          return false;
       }
       return true;
-   }
-
-
-   @Override
-   public CarFind get(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
    }
 
 
@@ -221,7 +151,7 @@ public class CarFind implements List<CarFind>
    }
 
 
-   public double getPrice()
+   public int getPrice()
    {
       return price;
    }
@@ -249,101 +179,11 @@ public class CarFind implements List<CarFind>
       result = (prime * result) + id;
       result = (prime * result) + ((make == null) ? 0 : make.hashCode());
       result = (prime * result) + ((model == null) ? 0 : model.hashCode());
-      long temp;
-      temp = Double.doubleToLongBits(price);
-      result = (prime * result) + (int) (temp ^ (temp >>> 32));
+      result = (prime * result) + price;
       result = (prime * result)
          + ((transmission == null) ? 0 : transmission.hashCode());
       result = (prime * result) + year;
       return result;
-   }
-
-
-   @Override
-   public int indexOf(Object o)
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-
-   @Override
-   public boolean isEmpty()
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public Iterator<CarFind> iterator()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public int lastIndexOf(Object o)
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-
-   @Override
-   public ListIterator<CarFind> listIterator()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public ListIterator<CarFind> listIterator(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public CarFind remove(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public boolean remove(Object o)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public boolean removeAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public boolean retainAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-
-   @Override
-   public CarFind set(int index, CarFind element)
-   {
-      // TODO Auto-generated method stub
-      return null;
    }
 
 
@@ -377,7 +217,7 @@ public class CarFind implements List<CarFind>
    }
 
 
-   public void setPrice(double price)
+   public void setPrice(int price)
    {
       this.price = price;
    }
@@ -396,45 +236,12 @@ public class CarFind implements List<CarFind>
 
 
    @Override
-   public int size()
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-
-   @Override
-   public List<CarFind> subList(int fromIndex, int toIndex)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public Object[] toArray()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
-   public <T> T[] toArray(T[] a)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-
-   @Override
    public String toString()
    {
       return "CarFind [id=" + id + ", make=" + make + ", model=" + model
          + ", fuel=" + fuel + ", transmission=" + transmission + ", year="
          + year + ", price=" + price + ", city=" + city + "]";
    }
-
 
 
 }

@@ -1,11 +1,6 @@
 package cst438.domain;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-public class FlightFind implements List<FlightFind>
+public class FlightFind
 {
    // Fields from the airline website
    private int flightId;
@@ -38,60 +33,6 @@ public class FlightFind implements List<FlightFind>
       this.originCity = originCity;
       this.destinationCity = destinationCity;
       this.price = price;
-   }
-
-   public FlightFind(String departureDate)
-   {
-      this.departureDate = departureDate;
-   } // Find by departure date
-
-   @Override
-   public boolean add(FlightFind e)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public void add(int index, FlightFind element)
-   {
-      // TODO Auto-generated method stub
-
-   }
-
-   @Override
-   public boolean addAll(Collection<? extends FlightFind> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public boolean addAll(int index, Collection<? extends FlightFind> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public void clear()
-   {
-      // TODO Auto-generated method stub
-
-   }
-
-   @Override
-   public boolean contains(Object o)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public boolean containsAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
    }
 
    @Override
@@ -176,13 +117,6 @@ public class FlightFind implements List<FlightFind>
       return true;
    }
 
-   @Override
-   public FlightFind get(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
    public String getAirlineName()
    {
       return airlineName;
@@ -246,83 +180,6 @@ public class FlightFind implements List<FlightFind>
       return result;
    }
 
-   @Override
-   public int indexOf(Object o)
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-   @Override
-   public boolean isEmpty()
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public Iterator<FlightFind> iterator()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public int lastIndexOf(Object o)
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-   @Override
-   public ListIterator<FlightFind> listIterator()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public ListIterator<FlightFind> listIterator(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public FlightFind remove(int index)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public boolean remove(Object o)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public boolean removeAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public boolean retainAll(Collection<?> c)
-   {
-      // TODO Auto-generated method stub
-      return false;
-   }
-
-   @Override
-   public FlightFind set(int index, FlightFind element)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
    public void setAirlineName(String airlineName)
    {
       this.airlineName = airlineName;
@@ -364,34 +221,6 @@ public class FlightFind implements List<FlightFind>
    }
 
    @Override
-   public int size()
-   {
-      // TODO Auto-generated method stub
-      return 0;
-   }
-
-   @Override
-   public List<FlightFind> subList(int fromIndex, int toIndex)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public Object[] toArray()
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
-   public <T> T[] toArray(T[] a)
-   {
-      // TODO Auto-generated method stub
-      return null;
-   }
-
-   @Override
    public String toString()
    {
       return "FlightFind [flightId=" + flightId + ", airlineName=" + airlineName
@@ -400,5 +229,7 @@ public class FlightFind implements List<FlightFind>
          + originCity + ", destinationCity=" + destinationCity + ", price="
          + price + "]";
    }
+
+
 
 }

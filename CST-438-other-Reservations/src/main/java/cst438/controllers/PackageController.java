@@ -9,14 +9,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import cst438.domain.CarFind;
+import cst438.domain.FlightFind;
+import cst438.domain.HotelFind;
 import cst438.domain.Package;
 import cst438.domain.PackageRepository;
+import cst438.services.PackageService;
 
 @Controller
 public class PackageController
 {
    @Autowired
    PackageRepository packageRepository;
+
 
    //   @GetMapping("/BostonToWashingtonDC") // A new reservation from a form
    //   public String BostonToSanFranciscoPackageInfo(Model model)
@@ -39,7 +44,7 @@ public class PackageController
    {
       Package packageDeal = new Package();
       model.addAttribute("packagedeal", packageDeal);
-      return "available_packages";
+      return "package_list_show";
    }
 
    @GetMapping("/package/new") // A new reservation from a form
@@ -50,12 +55,36 @@ public class PackageController
       return "available_packages";
    }
 
-   @GetMapping("/package") // Display packages
-   public String getAllPackages(Model model)
+   @GetMapping("/package/airline_search")
+   public String getAirlineSearch(Model model)
    {
-      Iterable<Package> project1 = packageRepository.findAll();
-      model.addAttribute("project1", project1);
-      return "package_list";
+      FlightFind FlightInfo = PackageService.searchFlight("boston", "seattle");
+      model.addAttribute("FlightInfo", FlightInfo);
+      return "airline_search";
+   }
+
+   @GetMapping("/package")
+   public String getAllPackageData(Model model)
+   {
+      Iterable<Package> packageDeal = packageRepository.findAll();
+      model.addAttribute("packagedeal", packageDeal);
+      return "package_list_show";
+   }
+
+   @GetMapping("/package/car_search")
+   public String getCarSearch(Model model)
+   {
+      CarFind carInfo = PackageService.searchCar("boston");
+      model.addAttribute("carInfo", carInfo);
+      return "car_search";
+   }
+
+   @GetMapping("/package/hotel_search")
+   public String getHotelSearch(Model model)
+   {
+      HotelFind hotelInfo = PackageService.searchHotel();
+      model.addAttribute("hotelInfo", hotelInfo);
+      return "hotel_search";
    }
 
    @GetMapping("/NewYorkToBoston") // A new reservation from a form

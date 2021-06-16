@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+    <title>Package List</title>
+</head>
+<body>
+
+	<br/>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>userID</th>
+		</tr>
+		<tr th:each="packages : ${packages}">
+
+			<td th:text="${packages.packageId}"></td>
+	Package ID: <span th:inline="text"> [[${packages.packageId}]] </span> <br />
+		</tr>
+	</table>
+</body>
+</html>
