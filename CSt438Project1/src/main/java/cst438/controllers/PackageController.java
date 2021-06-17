@@ -23,13 +23,17 @@ public class PackageController
    @Autowired
    PackageRepository packageRepository;
 
-   @GetMapping("/cart")
-   public String getAllPackageData(Model model)
+      @GetMapping("/usercart")
+   public String getAllCartData(Model model)
    {
-      Iterable<Package> packageDeal = packageRepository.findAll();
-      model.addAttribute("packagedeal", packageDeal);
+	   HotelFind hotelInfo = PackageService.searchHotel();
+	   	model.addAttribute("hotelInfo", hotelInfo);
+	   CarFind carInfo = PackageService.searchCar("boston");
+	   	model.addAttribute("carInfo", carInfo);
+//	   FlightFind flightInfo = PackageService.searchFlight("seattle");
+//	   	model.addAttribute("flightInfo", flightInfo);
       return "index";
-   }	
+   }		
 	
    @GetMapping("/package/airline_search")
    public String getAirlineSearch(Model model)
