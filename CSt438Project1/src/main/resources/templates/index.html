@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Product List</h3>
+	<table border=1>
+		<tr>
+		
+			<th>Package ID</th>
+			<th>User ID</th>
+			<th>Airline ID</th>
+			<th>Hotel ID</th>
+			<th>Car ID</th>
+			<th>Origin City</th>
+			<th>Destination City</th>
+			<th>Description</th>
+			<th>Departure Date</th>
+			<th>Return Date</th>
+			<th>Price</th>
+			<th>Buy</th>
+		</tr>
+		<tr th:each="packagedeal : ${packagedeal}">
+		<td th:text="${packagedeal.packageId}"></td>
+		<td th:text="${packagedeal.userId}"></td>
+		<td th:text="${packagedeal.airlineId}"></td>
+		<td th:text="${packagedeal.hotelId}"></td>
+		<td th:text="${packagedeal.carId}"></td>
+		<td th:text="${packagedeal.originCity}"></td>
+		<td th:text="${packagedeal.destination}"></td>
+		<td th:text="${packagedeal.pkgDescription}"></td>
+		<td th:text="${packagedeal.departureDate}"></td>
+		<td th:text="${packagedeal.returnDate}"></td>
+		<td th:text="${packagedeal.price}"></td>
+		<td>
+			<a th:href="@{~/cart/buy/{pid}(pid=${packagedeal.packageId})}">Buy Now</a>  
+		</td>
+		</tr>
+	</table>
+	
+</body>
+</html>
