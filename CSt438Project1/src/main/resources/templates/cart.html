@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Cart Info</h3>
+	<table border=1>
+		<tr>
+		
+			<th>Package ID</th>
+			<th>User ID</th>
+			<th>Airline ID</th>
+			<th>Hotel ID</th>
+			<th>Car ID</th>
+			<th>Origin City</th>
+			<th>Destination City</th>
+			<th>Description</th>
+			<th>Departure Date</th>
+			<th>Return Date</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Sub Total</th>
+		</tr>
+		<tr th:each="packagedeals : ${session.cart}">
+		<td th:text="${packagedeals.packageId}"></td>
+		<td th:text="${packagedeals.userId}"></td>
+		<td th:text="${packagedeals.airlineId}"></td>
+		<td th:text="${packagedeals.hotelId}"></td>
+		<td th:text="${packagedeals.carId}"></td>
+		<td th:text="${packagedeals.originCity}"></td>
+		<td th:text="${packagedeals.destination}"></td>
+		<td th:text="${packagedeals.pkgDescription}"></td>
+		<td th:text="${packagedeals.departureDate}"></td>
+		<td th:text="${packagedeals.returnDate}"></td>
+		<td th:text="${packagedeals.price}"></td>
+
+		<td>
+			
+		</td>
+		</tr>
+	</table>
+	
+</body>
+</html>
