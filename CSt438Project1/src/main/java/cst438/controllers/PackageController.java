@@ -23,6 +23,14 @@ public class PackageController
    @Autowired
    PackageRepository packageRepository;
 
+   @GetMapping("/cart")
+   public String getAllPackageData(Model model)
+   {
+      Iterable<Package> packageDeal = packageRepository.findAll();
+      model.addAttribute("packagedeal", packageDeal);
+      return "index";
+   }	
+	
    @GetMapping("/package/airline_search")
    public String getAirlineSearch(Model model)
    {
