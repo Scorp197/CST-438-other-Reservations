@@ -40,6 +40,11 @@ public class Package
    {
 
    }
+   
+   public Package(List<Package> findAll) {
+	// TODO Auto-generated constructor stub
+}
+
 
 
    public Package(long packageId, long userId, long airlineId,

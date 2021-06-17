@@ -35,11 +35,6 @@ public class FlightFind
       this.price = price;
    }
 
-   public FlightFind(String departureDate)
-   {
-      this.departureDate = departureDate;
-   } // Find by departure date
-
    @Override
    public boolean equals(Object obj)
    {
@@ -234,5 +229,4 @@ public class FlightFind
          + originCity + ", destinationCity=" + destinationCity + ", price="
          + price + "]";
    }
-
 }
