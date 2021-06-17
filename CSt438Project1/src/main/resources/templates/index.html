@@ -1,44 +1,151 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
+<link rel="stylesheet" th:href="@{/css/package_nav.css}"/>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+
 	<h3>Product List</h3>
+	
+	<!-- <div class="hotel"> -->
+	<div class="hotelimage">
+	 <img th:src="@{/css/LaQuinta.jpg}"/>
+	 </div>
+	 <div class="carimage">
+	 <img th:src="@{/css/Toyota_1989_MR2.jpg}"/>
+	 </div>
+	<div class="wrapper">
+	
+	
+	
 	<table border=1>
 		<tr>
-		
-			<th>Package ID</th>
-			<th>User ID</th>
-			<th>Airline ID</th>
-			<th>Hotel ID</th>
-			<th>Car ID</th>
-			<th>Origin City</th>
-			<th>Destination City</th>
-			<th>Description</th>
-			<th>Departure Date</th>
-			<th>Return Date</th>
-			<th>Price</th>
-			<th>Buy</th>
+			<tr th:each="hotelInfo : ${hotelInfo}">
+		<tr>
+			<th>Name</th>
+			<td th:text="${hotelInfo.name}"></td>
 		</tr>
-		<tr th:each="packagedeal : ${packagedeal}">
-		<td th:text="${packagedeal.packageId}"></td>
-		<td th:text="${packagedeal.userId}"></td>
-		<td th:text="${packagedeal.airlineId}"></td>
-		<td th:text="${packagedeal.hotelId}"></td>
-		<td th:text="${packagedeal.carId}"></td>
-		<td th:text="${packagedeal.originCity}"></td>
-		<td th:text="${packagedeal.destination}"></td>
-		<td th:text="${packagedeal.pkgDescription}"></td>
-		<td th:text="${packagedeal.departureDate}"></td>
-		<td th:text="${packagedeal.returnDate}"></td>
-		<td th:text="${packagedeal.price}"></td>
+		<tr>
+			<th>Address</th>
+			<td th:text="${hotelInfo.address}"></td>
+		</tr>	
+		<tr>
+			<th>Price</th>
+			<td>100</td>
+		</tr>	
 		<td>
-			<a th:href="@{~/cart/buy/{pid}(pid=${packagedeal.packageId})}">Buy Now</a>  
+		<a th:href="@{~/cart/buy/{pid}(pid=${hotelInfo.id})}">Buy Now</a> 
 		</td>
 		</tr>
 	</table>
+	<!-- </div> -->
+			
+	
+			
+	<table border=1>
+		<tr>
+			<tr th:each="carInfo : ${carInfo}">
+			<th>Car ID</th>
+		<td th:text="${carInfo.id}"></td>
+			</tr>
+	
+		<tr>
+			<th>Make</th>
+			<td th:text="${carInfo.make}"></td>
+		</tr>
+		<tr>
+			<th>Model</th>
+			<td th:text="${carInfo.model}"></td>
+		</tr>
+		<tr>
+			<th>Fuel</th>
+			<td th:text="${carInfo.fuel}"></td>
+		</tr>
+		<tr>
+			<th>Transmission</th>
+			<td th:text="${carInfo.transmission}"></td>
+		</tr>
+		<tr>
+			<th>Year</th>
+			<td th:text="${carInfo.year}"></td>
+		</tr>
+		<tr>
+			<th>City</th>
+			<td th:text="${carInfo.city}"></td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td th:text="${carInfo.price}"></td>
+		</tr>
+		
+		<td>
+		<a th:href="@{~/cart/buy/{pid}(pid=${carInfo.id})}">Buy Now</a> 
+		</td>
+		</tr>
+	</table>
+
+	<table border=1>
+		
+		<tr>
+			<th>Flight ID</th>
+			<td>4</td>
+		</tr>
+		<tr>
+			<th>Flight Number</th>
+			<td>"AA9812"</td>
+		</tr>	
+		<tr>
+			<th>Airline Number</th>
+			<td>america</td>
+		</tr>
+		<tr>
+			<th>Departure Date</th>
+			<td>2021-12-22</td>
+		</tr>
+		<tr>
+			<th>Departure Time</th>
+			<td>19:02:11</td>
+		</tr>
+		<tr>
+			<th>Number of Stops</th>
+			<td> 2</td>
+		</tr>
+		<tr>
+			<th>Origin City</th>
+			<td>boston</td>
+		</tr>
+		<tr>
+			<th>Destination City</th>
+			<td>san francisco</td>
+		</tr>
+		<tr>
+			<th>Price</th>
+			<td>550</td>
+		</tr>
+			
+			
+			
+		</tr>
+		<!-- <tr th:each="flightInfo : ${flightInfo}"> -->
+	
+		<!-- <td th:text="${flightInfo.flightId}"></td>
+		<td th:text="${flightInfo.flightNumber}"></td>
+		<td th:text="${flightInfo.airlineName}"></td>
+		<td th:text="${flightInfo.departureDate}"></td>
+		<td th:text="${flightInfo.departureTime}"></td>
+		<td th:text="${flightInfo.numberOfStops}"></td>
+		<td th:text="${flightInfo.originCity}"></td>
+		<td th:text="${flightInfo.destinationCity}"></td>
+		<td th:text="${flightInfo.price}"></td> -->
+		
+		<td>
+		<!-- <a th:href="@{~/cart/buy/{pid}(pid=${flightInfo.flightId})}">Buy Now</a>  -->
+		</td>
+		</tr>
+	</table> 
+	</div>
 	
 </body>
 </html>
